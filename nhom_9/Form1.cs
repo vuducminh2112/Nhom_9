@@ -16,15 +16,21 @@ namespace nhom_9
     {
         DanhSachDatLich dsdatlich;
         DatLich dl;
-
+        TimeSpan timeNotify;
+        int repeatTime;
         public frm_dat_lich()
         {
             InitializeComponent();
            
             dgv_danhsach.CellDoubleClick += dgv_danhsach_CellDoubleClick;
-            
+
+            timer1.Interval = 60000;
+            timer1.Start();
+
+            timer2.Interval = 60000;
+            timer2.Start();
         }
-        
+
         private void frm_dat_lich_Load(object sender, EventArgs e)
         {
             dtp_thoigian.Text = DateTime.Now.ToString();
@@ -239,6 +245,75 @@ namespace nhom_9
             }
         }
 
+        private void ThoiGianThongBao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (ThoiGianThongBao.SelectedIndex)
+            {
+                case 0:
+                    timeNotify = TimeSpan.FromMinutes(5);
+                    break;
+                case 1:
+                    timeNotify = TimeSpan.FromMinutes(15);
+                    break;
+                case 3:
+                    timeNotify = TimeSpan.FromMinutes(30);
+                    break;
+                default:
+                    timeNotify = TimeSpan.FromMinutes(0);
+                    break;
+            }
+            MessageBox.Show("Đã cài đặt thông báo " + ThoiGianThongBao.SelectedItem);
+        }
 
+        private void SoLanLapThongBao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (SoLanLapThongBao.SelectedIndex)
+            {
+                case 0:
+                    repeatTime = 1;
+                    break;
+                case 1:
+                    repeatTime = 7;
+                    break;
+                case 2:
+                    repeatTime = 30;
+                    break;
+                default:
+                    repeatTime = 0;
+                    break;
+            }
+            MessageBox.Show("Đã cài đặt sẽ lặp thông báo" + ThoiGianThongBao.SelectedItem);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            foreach (DataRow row in dgv_danhsach.Rows)
+            {
+                if (row["thoigian"] != null)
+                {
+                    DateTime thoigian = (DateTime)row["thoigian"];
+                    if (now >= thoigian - timeNotify)
+                    {
+                        MessageBox.Show("Sự kiện sắp diễn ra trong " + timeNotify + " phút.");
+                    }
+                }
+            }
+        }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            foreach (DataRow row in dgv_danhsach.Rows)
+            {
+                if (row["thoigian"] != null)
+                {
+                    DateTime thoigian = (DateTime)row["thoigian"];
+                    DateTime now = DateTime.Now;
+                    if (now >= thoigian && now <= thoigian.AddDays(repeatTime) && now >= thoigian - timeNotify)
+                    {
+                        MessageBox.Show("Thông báo hôm nay có công việc cần thực hiện", "Thông báo");
+                    }
+                }
+            }
+        }
     }
 }
