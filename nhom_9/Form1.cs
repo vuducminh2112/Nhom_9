@@ -235,6 +235,7 @@ namespace nhom_9
                 {                  
                     dsdatlich.XoaDanhSachDatLich(id);              
                     hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
+                    LuuDanhSachDatLichToFile();
                 }
             }
         }
