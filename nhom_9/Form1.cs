@@ -51,6 +51,11 @@ namespace nhom_9
            
             hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
             dsdatlich.UpdateIDs();
+            //Trạng thái công việc 
+            if(chk_hoanthanh.Checked==false)
+                chk_hoanthanh.ForeColor=Color.Red;
+            
+               
          
         }
         private void hienthidanhsachdatlich(DataGridView dgv, List<DatLich> ds)
@@ -69,14 +74,7 @@ namespace nhom_9
                 //luu lich
                 int ip = dsdatlich.tao_ID(dl);
 
-                string trangthai;
-                if (rad_hoanthanh.Checked == true)
-                {
-                    trangthai = "Hoàn thành ";
-
-                }
-                else
-                    trangthai = "Chưa hoàn thành";
+                string trangthai= "Chưa hoàn thành";
                 dtp_thoigian.Focus();
                 dl = new DatLich(ip, txt_tieude.Text, txt_noidung.Text, Convert.ToDateTime(dtp_thoigian.Text), trangthai);
                 if (dsdatlich.timTG(dl))
@@ -88,7 +86,7 @@ namespace nhom_9
                 {
                     TimeSpan time = Convert.ToDateTime(dtp_thoigian.Text).Subtract(DateTime.Now);
                     int phuttoido = time.Minutes;
-                    if (phuttoido >= 30)
+                    if (phuttoido >= 1)
                     {
                         dsdatlich.AddDanhSachDatLich(dl);
                         hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
@@ -125,7 +123,7 @@ namespace nhom_9
             txt_tieude.Text = "";
             txt_noidung.Text = "";
             dtp_thoigian.Value = DateTime.Now;
-            rad_hoanthanh.Checked = false;
+            chk_hoanthanh.Checked = false;
             HienThiChiTiet(null);
 
 
@@ -168,7 +166,7 @@ namespace nhom_9
                 {
                     HienThiChiTiet(lichCanSua);
                     string trangthai;
-                    if (rad_hoanthanh.Checked)
+                    if (chk_hoanthanh.Checked)
                     {
                         trangthai = "Hoàn thành";
                     }
@@ -212,11 +210,11 @@ namespace nhom_9
                 dtp_thoigian.Value = lich.thoigian;
                 if (lich.trangthai.Equals("Hoàn thành"))
                 {
-                    rad_hoanthanh.Checked = true;
+                    chk_hoanthanh.Checked = true;
                 }
                 else
                 {
-                    rad_hoanthanh.Checked = false;
+                    chk_hoanthanh.Checked = false;
                 }
             }
         }
@@ -240,6 +238,10 @@ namespace nhom_9
             }
         }
 
-
+        private void chk_hoanthanh_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chk_hoanthanh.Checked)
+                chk_hoanthanh.ForeColor = Color.Green;
+        }
     }
 }
