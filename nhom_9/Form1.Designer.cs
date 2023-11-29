@@ -71,13 +71,14 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
-            this.splitContainer1.Size = new System.Drawing.Size(1008, 513);
-            this.splitContainer1.SplitterDistance = 257;
+            this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer1.Size = new System.Drawing.Size(964, 513);
+            this.splitContainer1.SplitterDistance = 202;
             this.splitContainer1.TabIndex = 0;
             // 
             // btn_tao_moi
             // 
-            this.btn_tao_moi.Location = new System.Drawing.Point(68, 18);
+            this.btn_tao_moi.Location = new System.Drawing.Point(53, 18);
             this.btn_tao_moi.Name = "btn_tao_moi";
             this.btn_tao_moi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_tao_moi.Size = new System.Drawing.Size(94, 29);
@@ -105,6 +106,7 @@
             this.splitContainer2.Panel1.Controls.Add(this.txt_noidung);
             this.splitContainer2.Panel1.Controls.Add(this.label1);
             this.splitContainer2.Panel1.Controls.Add(this.txt_tieude);
+            this.splitContainer2.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer2.Panel2
             // 
@@ -113,7 +115,8 @@
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Panel2.Controls.Add(this.txt_timkiem);
             this.splitContainer2.Panel2.Controls.Add(this.dgv_danhsach);
-            this.splitContainer2.Size = new System.Drawing.Size(747, 513);
+            this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer2.Size = new System.Drawing.Size(758, 513);
             this.splitContainer2.SplitterDistance = 250;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -167,7 +170,7 @@
             // 
             // btn_luu_lich
             // 
-            this.btn_luu_lich.Location = new System.Drawing.Point(580, 220);
+            this.btn_luu_lich.Location = new System.Drawing.Point(580, 210);
             this.btn_luu_lich.Name = "btn_luu_lich";
             this.btn_luu_lich.Size = new System.Drawing.Size(94, 29);
             this.btn_luu_lich.TabIndex = 6;
@@ -249,9 +252,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1008, 513);
+            this.ClientSize = new System.Drawing.Size(964, 513);
             this.Controls.Add(this.splitContainer1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frm_dat_lich";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đặt lịch";
