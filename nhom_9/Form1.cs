@@ -33,14 +33,14 @@ namespace nhom_9
             dl = new DatLich();
 
             //Doc file
-
+            
             string[] tam = File.ReadAllLines("danhsachdatlich.txt");
             for (int i = 0; i < tam.Length; i++)
             {
                 string line = tam[i];
                 string[] tam2 = line.Split("\t".ToArray(), StringSplitOptions.RemoveEmptyEntries);
                 DatLich datLich = new DatLich();
-                datLich.id = int.Parse(tam2[0]);
+                datLich.id = tam2[0];
                 datLich.tieude = tam2[1];
                 datLich.noidung = tam2[2];
                 datLich.thoigian = Convert.ToDateTime(tam2[3]);
@@ -50,12 +50,13 @@ namespace nhom_9
             }
 
             hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
-            dsdatlich.UpdateIDs();
+           
             //Trạng thái công việc 
             if (chk_hoanthanh.Checked == false)
                 chk_hoanthanh.ForeColor = Color.Red;
-            //xuat form dang nhap
-            if
+           //Cố định form
+           splitContainer1.IsSplitterFixed = true;
+           splitContainer2.IsSplitterFixed = true;
         }
         private void hienthidanhsachdatlich(DataGridView dgv, List<DatLich> ds)
         {
@@ -71,7 +72,7 @@ namespace nhom_9
             else
             {
                 //luu lich
-                int ip = dsdatlich.tao_ID(dl);
+                string ip=Guid.NewGuid().ToString();
 
                 string trangthai = "Chưa hoàn thành";
                 dtp_thoigian.Focus();
@@ -133,7 +134,7 @@ namespace nhom_9
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgv_danhsach.Rows[e.RowIndex];
-                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                string id = row.Cells["ID"].Value.ToString();
 
                 DatLich lich = dsdatlich.TimTheoID(id);
                 HienThiChiTiet(lich);
@@ -144,7 +145,7 @@ namespace nhom_9
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dgv_danhsach.Rows[e.RowIndex];
-                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                string id = row.Cells["ID"].Value.ToString();
 
                 DatLich lich = dsdatlich.TimTheoID(id);
                 HienThiChiTiet(lich);
@@ -157,7 +158,7 @@ namespace nhom_9
             if (selectedRows.Count > 0)
             {
                 DataGridViewRow row = selectedRows[0];
-                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                string id = row.Cells["ID"].Value.ToString();
 
                 //sửa thông tin lịch
                 DatLich lichCanSua = dsdatlich.TimTheoID(id);
@@ -226,7 +227,7 @@ namespace nhom_9
             {
 
                 DataGridViewRow row = selectedRows[0];
-                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                string id = row.Cells["ID"].Value.ToString();
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
