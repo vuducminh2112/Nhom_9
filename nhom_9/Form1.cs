@@ -20,43 +20,42 @@ namespace nhom_9
         public frm_dat_lich()
         {
             InitializeComponent();
-           
+
             dgv_danhsach.CellDoubleClick += dgv_danhsach_CellDoubleClick;
-            
+
         }
-        
+
         private void frm_dat_lich_Load(object sender, EventArgs e)
         {
             dtp_thoigian.Text = DateTime.Now.ToString();
 
             dsdatlich = new DanhSachDatLich();
             dl = new DatLich();
-            
+
             //Doc file
 
             string[] tam = File.ReadAllLines("danhsachdatlich.txt");
-              for (int i = 0; i < tam.Length; i++)
-              {
-                  string line = tam[i];
-                  string[] tam2 = line.Split("\t".ToArray(), StringSplitOptions.RemoveEmptyEntries);
-                  DatLich datLich = new DatLich();
-                  datLich.id = int.Parse(tam2[0]);
-                  datLich.tieude = tam2[1];
-                  datLich.noidung = tam2[2];
-                  datLich.thoigian = Convert.ToDateTime(tam2[3]);
-                  datLich.trangthai = tam2[4];
-                  dl = new DatLich(datLich.id, datLich.tieude, datLich.noidung, datLich.thoigian, datLich.trangthai);
-                  dsdatlich.AddDanhSachDatLich(dl);
-              }             
-           
+            for (int i = 0; i < tam.Length; i++)
+            {
+                string line = tam[i];
+                string[] tam2 = line.Split("\t".ToArray(), StringSplitOptions.RemoveEmptyEntries);
+                DatLich datLich = new DatLich();
+                datLich.id = int.Parse(tam2[0]);
+                datLich.tieude = tam2[1];
+                datLich.noidung = tam2[2];
+                datLich.thoigian = Convert.ToDateTime(tam2[3]);
+                datLich.trangthai = tam2[4];
+                dl = new DatLich(datLich.id, datLich.tieude, datLich.noidung, datLich.thoigian, datLich.trangthai);
+                dsdatlich.AddDanhSachDatLich(dl);
+            }
+
             hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
             dsdatlich.UpdateIDs();
             //Trạng thái công việc 
-            if(chk_hoanthanh.Checked==false)
-                chk_hoanthanh.ForeColor=Color.Red;
-            
-               
-         
+            if (chk_hoanthanh.Checked == false)
+                chk_hoanthanh.ForeColor = Color.Red;
+            //xuat form dang nhap
+            if
         }
         private void hienthidanhsachdatlich(DataGridView dgv, List<DatLich> ds)
         {
@@ -74,7 +73,7 @@ namespace nhom_9
                 //luu lich
                 int ip = dsdatlich.tao_ID(dl);
 
-                string trangthai= "Chưa hoàn thành";
+                string trangthai = "Chưa hoàn thành";
                 dtp_thoigian.Focus();
                 dl = new DatLich(ip, txt_tieude.Text, txt_noidung.Text, Convert.ToDateTime(dtp_thoigian.Text), trangthai);
                 if (dsdatlich.timTG(dl))
@@ -181,7 +180,7 @@ namespace nhom_9
                 }
             }
         }
-        
+
         private void LuuDanhSachDatLichToFile()
         {
             try
@@ -220,18 +219,18 @@ namespace nhom_9
         }
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            
+
             DataGridViewSelectedRowCollection selectedRows = dgv_danhsach.SelectedRows;
 
             if (selectedRows.Count > 0)
             {
-                
+
                 DataGridViewRow row = selectedRows[0];
-                int id = Convert.ToInt32(row.Cells["ID"].Value);                
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
-                {                  
-                    dsdatlich.XoaDanhSachDatLich(id);              
+                {
+                    dsdatlich.XoaDanhSachDatLich(id);
                     hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
                     LuuDanhSachDatLichToFile();
                 }
@@ -240,8 +239,21 @@ namespace nhom_9
 
         private void chk_hoanthanh_CheckedChanged(object sender, EventArgs e)
         {
-            if(chk_hoanthanh.Checked)
+            if (chk_hoanthanh.Checked)
                 chk_hoanthanh.ForeColor = Color.Green;
+        }
+
+        private void frm_dang_xuat_Click(object sender, EventArgs e)
+        {
+
+            frm_dang_nhap f = new frm_dang_nhap();
+            f.Show();
+            this.Hide();
+        }
+
+        private void frm_thoatchuongtrinh_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
