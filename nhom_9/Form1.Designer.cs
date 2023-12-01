@@ -72,8 +72,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(964, 513);
-            this.splitContainer1.SplitterDistance = 202;
+            this.splitContainer1.Size = new System.Drawing.Size(995, 513);
+            this.splitContainer1.SplitterDistance = 208;
             this.splitContainer1.TabIndex = 0;
             // 
             // btn_tao_moi
@@ -85,6 +85,7 @@
             this.btn_tao_moi.TabIndex = 0;
             this.btn_tao_moi.Text = "Tạo mới";
             this.btn_tao_moi.UseVisualStyleBackColor = true;
+            this.btn_tao_moi.Click += new System.EventHandler(this.btn_tao_moi_Click);
             // 
             // splitContainer2
             // 
@@ -116,7 +117,7 @@
             this.splitContainer2.Panel2.Controls.Add(this.txt_timkiem);
             this.splitContainer2.Panel2.Controls.Add(this.dgv_danhsach);
             this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer2.Size = new System.Drawing.Size(758, 513);
+            this.splitContainer2.Size = new System.Drawing.Size(783, 513);
             this.splitContainer2.SplitterDistance = 250;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -148,6 +149,7 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Xóa";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // dtp_thoigian
             // 
@@ -245,7 +247,7 @@
             this.dgv_danhsach.Location = new System.Drawing.Point(12, 51);
             this.dgv_danhsach.Name = "dgv_danhsach";
             this.dgv_danhsach.RowHeadersWidth = 51;
-            this.dgv_danhsach.Size = new System.Drawing.Size(695, 196);
+            this.dgv_danhsach.Size = new System.Drawing.Size(759, 196);
             this.dgv_danhsach.TabIndex = 0;
             // 
             // frm_dat_lich
@@ -254,7 +256,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(964, 513);
+            this.ClientSize = new System.Drawing.Size(995, 513);
             this.Controls.Add(this.splitContainer1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

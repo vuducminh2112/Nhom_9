@@ -16,7 +16,7 @@ namespace nhom_9
     [Serializable]
     internal class DatLich
     {
-        private int _id;
+        private string _id;
         private string _tieude;
         private string _noidung;       
         private DateTime _thoigian;
@@ -24,13 +24,13 @@ namespace nhom_9
        
         public DatLich()
         {
-            this._id = -1;
+            this._id ="";
             this._tieude = "không có tiêu đề ";
             this._noidung = "không có nội dung ";
             this._thoigian = DateTime.Now;
             this._trangthai = "chưa hoàn thành ";
         }
-        public DatLich(int id, string tieude, string noidung, DateTime thoigian, string trangthai)
+        public DatLich(string id, string tieude, string noidung, DateTime thoigian, string trangthai)
         {
             this._id = id;
             this._tieude = tieude;
@@ -39,7 +39,7 @@ namespace nhom_9
             this._trangthai = trangthai;
           
         }
-        public int id
+        public string id
         {
             get { return this._id; }
             set { this._id = value; }

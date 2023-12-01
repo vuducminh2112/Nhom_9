@@ -27,16 +27,10 @@ namespace nhom_9
         }
         public void AddDanhSachDatLich(DatLich dsdt)
         {
-            dsdt.id = tao_ID(dsdt);
+           
             this._danhSachDatLich.Add(dsdt);
         }
-        public int tao_ID(DatLich datlich)
-        {
-            int id = 1;
-            foreach (DatLich d in this._danhSachDatLich)
-                id++;
-            return id;
-        }
+       
         public bool timTG(DatLich dl)
         {
             foreach (DatLich d in this._danhSachDatLich)
@@ -48,11 +42,11 @@ namespace nhom_9
             }
             return false;
         }
-        public DatLich TimTheoID(int id)
+        public DatLich TimTheoID(string id)
         {
             return _danhSachDatLich.FirstOrDefault(d => d.id == id);
         }
-        public void SuaDanhSachDatLich(int id, DatLich datLichMoi)
+        public void SuaDanhSachDatLich(string id, DatLich datLichMoi)
         {
 
             DatLich datLichCanSua = _danhSachDatLich.FirstOrDefault(d => d.id == id);
@@ -72,29 +66,20 @@ namespace nhom_9
         }
 
 
-        public void XoaDanhSachDatLich(int id)
+        public void XoaDanhSachDatLich(string id)
         {
             
             DatLich datLichCanXoa = _danhSachDatLich.FirstOrDefault(d => d.id == id);
 
             if (datLichCanXoa != null)
             {
-            
-                _danhSachDatLich.Remove(datLichCanXoa);
-                UpdateIDs();
-            }
-        }
-        public void UpdateIDs()
-        {
-            for (int i = 0; i < _danhSachDatLich.Count; i++)
-            {
-                _danhSachDatLich[i].id = i + 1;
-            }
-        }
-      
-        
 
+                _danhSachDatLich.Remove(datLichCanXoa);
+            }
+        }
+     
     }
-    }
+
+}
 
 
