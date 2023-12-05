@@ -77,6 +77,7 @@
             txt_tentaikhoan.Name = "txt_tentaikhoan";
             txt_tentaikhoan.Size = new Size(296, 23);
             txt_tentaikhoan.TabIndex = 3;
+            txt_tentaikhoan.Text = "admin";
             // 
             // txt_matkhau
             // 
@@ -87,6 +88,7 @@
             txt_matkhau.Size = new Size(296, 23);
             txt_matkhau.TabIndex = 4;
             txt_matkhau.Tag = "";
+            txt_matkhau.Text = "12345";
             txt_matkhau.TextChanged += textBox1_TextChanged;
             // 
             // frm_dangnhap
@@ -126,6 +128,7 @@
             Name = "frm_dang_nhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đăng Nhập";
+            FormClosing += frm_dang_nhap_FormClosing;
             FormClosed += frm_dang_nhap_FormClosed;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
