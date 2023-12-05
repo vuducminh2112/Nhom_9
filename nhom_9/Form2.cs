@@ -14,7 +14,7 @@ namespace nhom_9
     public partial class frm_dang_nhap : Form
     {
         string tenTaiKhoan = "admin";
-        string matKhau = "123456789";
+        string matKhau = "12345";
         public frm_dang_nhap()
         {
             InitializeComponent();
@@ -54,6 +54,12 @@ namespace nhom_9
         private void frm_dang_nhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frm_dang_nhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("BạnCó Muốn Thoát Chương Trình","Cảnh Báo",MessageBoxButtons.YesNo)!= DialogResult.Yes)
+                e.Cancel    = true;
         }
     }
 }

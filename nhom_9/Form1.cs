@@ -33,7 +33,7 @@ namespace nhom_9
             dl = new DatLich();
 
             //Doc file
-            
+
             string[] tam = File.ReadAllLines("danhsachdatlich.txt");
             for (int i = 0; i < tam.Length; i++)
             {
@@ -50,13 +50,13 @@ namespace nhom_9
             }
 
             hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
-           
+
             //Trạng thái công việc 
             if (chk_hoanthanh.Checked == false)
                 chk_hoanthanh.ForeColor = Color.Red;
-           //Cố định form
-           splitContainer1.IsSplitterFixed = true;
-           splitContainer2.IsSplitterFixed = true;
+            //Cố định form
+            splitContainer1.IsSplitterFixed = true;
+            splitContainer2.IsSplitterFixed = true;
         }
         private void hienthidanhsachdatlich(DataGridView dgv, List<DatLich> ds)
         {
@@ -72,7 +72,7 @@ namespace nhom_9
             else
             {
                 //luu lich
-                string ip=Guid.NewGuid().ToString();
+                string ip = Guid.NewGuid().ToString();
 
                 string trangthai = "Chưa hoàn thành";
                 dtp_thoigian.Focus();
@@ -253,6 +253,18 @@ namespace nhom_9
         }
 
         private void frm_thoatchuongtrinh_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void frm_dang_xuat_Click_1(object sender, EventArgs e)
+        {
+            frm_dang_nhap f = new frm_dang_nhap();
+            f.Show();
+            this.Hide();
+        }
+
+        private void frm_thoatchuongtrinh_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
