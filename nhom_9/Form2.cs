@@ -58,8 +58,8 @@ namespace nhom_9
 
         private void frm_dang_nhap_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("BạnCó Muốn Thoát Chương Trình","Cảnh Báo",MessageBoxButtons.YesNo)!= DialogResult.Yes)
-                e.Cancel    = true;
+            if (MessageBox.Show("BạnCó Muốn Thoát Chương Trình", "Cảnh Báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                e.Cancel = true;
         }
     }
 }

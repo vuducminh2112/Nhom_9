@@ -268,5 +268,10 @@ namespace nhom_9
         {
             Application.Exit();
         }
+
+        private void frm_dat_lich_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

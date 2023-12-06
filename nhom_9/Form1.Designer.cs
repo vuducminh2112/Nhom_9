@@ -305,6 +305,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Đặt lịch";
             Activated += frm_dat_lich_Load;
+            Load += frm_dat_lich_Load_1;
             Click += frm_dat_lich_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
