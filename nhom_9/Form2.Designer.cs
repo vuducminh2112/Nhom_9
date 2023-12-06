@@ -115,7 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(458, 530);
+            ClientSize = new Size(475, 530);
             Controls.Add(frm_thoat);
             Controls.Add(frm_dangnhap);
             Controls.Add(txt_matkhau);
