@@ -164,7 +164,7 @@ namespace nhom_9
                 DatLich lichCanSua = dsdatlich.TimTheoID(id);
                 if (lichCanSua != null)
                 {
-                    HienThiChiTiet(lichCanSua);
+                   
                     string trangthai;
                     if (chk_hoanthanh.Checked)
                     {
@@ -177,7 +177,7 @@ namespace nhom_9
                     lichCanSua.SuaDanhSachDatLich(txt_tieude.Text, txt_noidung.Text, Convert.ToDateTime(dtp_thoigian.Text), trangthai);
                     LuuDanhSachDatLichToFile();
                     hienthidanhsachdatlich(dgv_danhsach, dsdatlich.danhSachDatLich);
-                    dgv_danhsach.Refresh();
+                    
                 }
             }
         }

@@ -62,7 +62,6 @@
             // 
             splitContainer1.Dock = DockStyle.Fill;
             splitContainer1.Location = new Point(0, 0);
-            splitContainer1.Margin = new Padding(3, 2, 3, 2);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -77,16 +76,18 @@
             // 
             splitContainer1.Panel2.Controls.Add(splitContainer2);
             splitContainer1.Panel2.RightToLeft = RightToLeft.No;
-            splitContainer1.Size = new Size(962, 385);
-            splitContainer1.SplitterDistance = 197;
+            splitContainer1.Size = new Size(1099, 513);
+            splitContainer1.SplitterDistance = 225;
+            splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
             // 
             // frm_thoatchuongtrinh
             // 
             frm_thoatchuongtrinh.AllowDrop = true;
-            frm_thoatchuongtrinh.Location = new Point(46, 359);
+            frm_thoatchuongtrinh.Location = new Point(53, 479);
+            frm_thoatchuongtrinh.Margin = new Padding(3, 4, 3, 4);
             frm_thoatchuongtrinh.Name = "frm_thoatchuongtrinh";
-            frm_thoatchuongtrinh.Size = new Size(75, 23);
+            frm_thoatchuongtrinh.Size = new Size(86, 31);
             frm_thoatchuongtrinh.TabIndex = 2;
             frm_thoatchuongtrinh.Text = "Thoát";
             frm_thoatchuongtrinh.UseCompatibleTextRendering = true;
@@ -96,9 +97,10 @@
             // frm_dang_xuat
             // 
             frm_dang_xuat.AllowDrop = true;
-            frm_dang_xuat.Location = new Point(46, 331);
+            frm_dang_xuat.Location = new Point(53, 441);
+            frm_dang_xuat.Margin = new Padding(3, 4, 3, 4);
             frm_dang_xuat.Name = "frm_dang_xuat";
-            frm_dang_xuat.Size = new Size(75, 23);
+            frm_dang_xuat.Size = new Size(86, 31);
             frm_dang_xuat.TabIndex = 1;
             frm_dang_xuat.Text = "Đăng Xuất";
             frm_dang_xuat.UseCompatibleTextRendering = true;
@@ -107,11 +109,10 @@
             // 
             // btn_tao_moi
             // 
-            btn_tao_moi.Location = new Point(46, 14);
-            btn_tao_moi.Margin = new Padding(3, 2, 3, 2);
+            btn_tao_moi.Location = new Point(53, 19);
             btn_tao_moi.Name = "btn_tao_moi";
             btn_tao_moi.RightToLeft = RightToLeft.No;
-            btn_tao_moi.Size = new Size(82, 22);
+            btn_tao_moi.Size = new Size(94, 29);
             btn_tao_moi.TabIndex = 0;
             btn_tao_moi.Text = "Tạo mới";
             btn_tao_moi.UseVisualStyleBackColor = true;
@@ -121,7 +122,6 @@
             // 
             splitContainer2.Dock = DockStyle.Fill;
             splitContainer2.Location = new Point(0, 0);
-            splitContainer2.Margin = new Padding(3, 2, 3, 2);
             splitContainer2.Name = "splitContainer2";
             splitContainer2.Orientation = Orientation.Horizontal;
             // 
@@ -148,38 +148,35 @@
             splitContainer2.Panel2.Controls.Add(txt_timkiem);
             splitContainer2.Panel2.Controls.Add(dgv_danhsach);
             splitContainer2.Panel2.RightToLeft = RightToLeft.No;
-            splitContainer2.Size = new Size(761, 385);
-            splitContainer2.SplitterDistance = 186;
-            splitContainer2.SplitterWidth = 3;
+            splitContainer2.Size = new Size(869, 513);
+            splitContainer2.SplitterDistance = 247;
             splitContainer2.TabIndex = 0;
             // 
             // chk_hoanthanh
             // 
             chk_hoanthanh.AutoSize = true;
-            chk_hoanthanh.Location = new Point(508, 13);
-            chk_hoanthanh.Margin = new Padding(3, 2, 3, 2);
+            chk_hoanthanh.Location = new Point(581, 17);
             chk_hoanthanh.Name = "chk_hoanthanh";
-            chk_hoanthanh.Size = new Size(89, 19);
+            chk_hoanthanh.Size = new Size(108, 24);
             chk_hoanthanh.TabIndex = 13;
             chk_hoanthanh.Text = "Hoàn thành";
             chk_hoanthanh.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(508, 121);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(581, 161);
             button2.Name = "button2";
-            button2.Size = new Size(82, 22);
+            button2.Size = new Size(94, 29);
             button2.TabIndex = 12;
             button2.Text = "Cập nhật";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += btn_sua_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(508, 76);
-            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Location = new Point(581, 101);
             button1.Name = "button1";
-            button1.Size = new Size(82, 22);
+            button1.Size = new Size(94, 29);
             button1.TabIndex = 11;
             button1.Text = "Xóa";
             button1.UseVisualStyleBackColor = true;
@@ -189,28 +186,26 @@
             // 
             dtp_thoigian.CustomFormat = "      HH:mm                     dd/MM/yyyy";
             dtp_thoigian.Format = DateTimePickerFormat.Custom;
-            dtp_thoigian.Location = new Point(98, 159);
-            dtp_thoigian.Margin = new Padding(3, 2, 3, 2);
+            dtp_thoigian.Location = new Point(112, 212);
             dtp_thoigian.Name = "dtp_thoigian";
-            dtp_thoigian.Size = new Size(394, 23);
+            dtp_thoigian.Size = new Size(450, 27);
             dtp_thoigian.TabIndex = 10;
             dtp_thoigian.Value = new DateTime(2023, 11, 12, 20, 13, 0, 0);
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(3, 164);
+            label2.Location = new Point(3, 219);
             label2.Name = "label2";
-            label2.Size = new Size(59, 15);
+            label2.Size = new Size(74, 20);
             label2.TabIndex = 9;
             label2.Text = "Thời gian:";
             // 
             // btn_luu_lich
             // 
-            btn_luu_lich.Location = new Point(508, 158);
-            btn_luu_lich.Margin = new Padding(3, 2, 3, 2);
+            btn_luu_lich.Location = new Point(581, 211);
             btn_luu_lich.Name = "btn_luu_lich";
-            btn_luu_lich.Size = new Size(82, 22);
+            btn_luu_lich.Size = new Size(94, 29);
             btn_luu_lich.TabIndex = 6;
             btn_luu_lich.Text = "Lưu lịch";
             btn_luu_lich.UseVisualStyleBackColor = true;
@@ -219,44 +214,41 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 41);
+            label4.Location = new Point(3, 55);
             label4.Name = "label4";
-            label4.Size = new Size(63, 15);
+            label4.Size = new Size(78, 20);
             label4.TabIndex = 3;
             label4.Text = "Nội dung :";
             // 
             // txt_noidung
             // 
-            txt_noidung.Location = new Point(98, 41);
-            txt_noidung.Margin = new Padding(3, 2, 3, 2);
+            txt_noidung.Location = new Point(112, 55);
             txt_noidung.Multiline = true;
             txt_noidung.Name = "txt_noidung";
-            txt_noidung.Size = new Size(394, 102);
+            txt_noidung.Size = new Size(450, 135);
             txt_noidung.TabIndex = 2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(3, 14);
+            label1.Location = new Point(3, 19);
             label1.Name = "label1";
-            label1.Size = new Size(51, 15);
+            label1.Size = new Size(65, 20);
             label1.TabIndex = 1;
             label1.Text = "Tiêu đề :";
             // 
             // txt_tieude
             // 
-            txt_tieude.Location = new Point(98, 9);
-            txt_tieude.Margin = new Padding(3, 2, 3, 2);
+            txt_tieude.Location = new Point(112, 12);
             txt_tieude.Name = "txt_tieude";
-            txt_tieude.Size = new Size(394, 23);
+            txt_tieude.Size = new Size(450, 27);
             txt_tieude.TabIndex = 0;
             // 
             // btn_timkiem
             // 
-            btn_timkiem.Location = new Point(508, 14);
-            btn_timkiem.Margin = new Padding(3, 2, 3, 2);
+            btn_timkiem.Location = new Point(581, 19);
             btn_timkiem.Name = "btn_timkiem";
-            btn_timkiem.Size = new Size(82, 22);
+            btn_timkiem.Size = new Size(94, 29);
             btn_timkiem.TabIndex = 3;
             btn_timkiem.Text = "SREACH";
             btn_timkiem.UseVisualStyleBackColor = true;
@@ -264,18 +256,17 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(10, 16);
+            label3.Location = new Point(11, 21);
             label3.Name = "label3";
-            label3.Size = new Size(56, 15);
+            label3.Size = new Size(70, 20);
             label3.TabIndex = 2;
             label3.Text = "Tìm kiếm";
             // 
             // txt_timkiem
             // 
-            txt_timkiem.Location = new Point(76, 14);
-            txt_timkiem.Margin = new Padding(3, 2, 3, 2);
+            txt_timkiem.Location = new Point(87, 19);
             txt_timkiem.Name = "txt_timkiem";
-            txt_timkiem.Size = new Size(416, 23);
+            txt_timkiem.Size = new Size(475, 27);
             txt_timkiem.TabIndex = 1;
             // 
             // dgv_danhsach
@@ -283,22 +274,20 @@
             dgv_danhsach.BackgroundColor = Color.FromArgb(224, 224, 224);
             dgv_danhsach.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_danhsach.GridColor = SystemColors.ActiveBorder;
-            dgv_danhsach.Location = new Point(10, 38);
-            dgv_danhsach.Margin = new Padding(3, 2, 3, 2);
+            dgv_danhsach.Location = new Point(11, 51);
             dgv_danhsach.Name = "dgv_danhsach";
             dgv_danhsach.RowHeadersWidth = 51;
-            dgv_danhsach.Size = new Size(738, 147);
+            dgv_danhsach.Size = new Size(843, 196);
             dgv_danhsach.TabIndex = 0;
             // 
             // frm_dat_lich
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
-            ClientSize = new Size(962, 385);
+            ClientSize = new Size(1099, 513);
             Controls.Add(splitContainer1);
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frm_dat_lich";
