@@ -151,7 +151,7 @@ namespace nhom_9
                 HienThiChiTiet(lich);
             }
         }
-        private void btn_sua_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection selectedRows = dgv_danhsach.SelectedRows;
 
